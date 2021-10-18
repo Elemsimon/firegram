@@ -1,20 +1,22 @@
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyBfBjMeoRPRXcbGgKvmG_Soj3eqXEwbz4U",
-    authDomain: "sim-firegram.firebaseapp.com",
-    projectId: "sim-firegram",
-    storageBucket: "sim-firegram.appspot.com",
-    messagingSenderId: "738870491957",
-    appId: "1:738870491957:web:912fb91dba3e87949d6a7c"
-  };
-  
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
 
-  const projectStorage = firebase.storage();
-  const projectFirestore = firebase.firestore();
+var firebaseConfig = {
+  apiKey: "AIzaSyDLmnoBvnjOQ-AaJgDw1DnVBiTETbcp8LI",
+  authDomain: "the-net-ninja-sandbox.firebaseapp.com",
+  databaseURL: "https://the-net-ninja-sandbox.firebaseio.com",
+  projectId: "the-net-ninja-sandbox",
+  storageBucket: "the-net-ninja-sandbox.appspot.com",
+  messagingSenderId: "485942827092",
+  appId: "1:485942827092:web:1811d9d8f1f5fabcd5b5c1"
+};
 
-  export { projectStorage, projectFirestore };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const projectStorage = firebase.storage();
+const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+export { projectStorage, projectFirestore, timestamp };
